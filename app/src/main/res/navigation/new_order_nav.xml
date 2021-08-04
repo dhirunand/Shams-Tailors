@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_order_nav"
+    app:startDestination="@id/customerDetailsFragment">
+
+    <fragment
+        android:id="@+id/customerDetailsFragment"
+        android:name="com.dhirunand.shamstailors.CustomerDetailsFragment"
+        android:label="New Customer"
+        tools:layout="@layout/fragment_customer_details">
+        <action
+            android:id="@+id/action_customerDetailsFragment_to_selectItemFragment"
+            app:destination="@id/selectItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectItemFragment"
+        android:name="com.dhirunand.shamstailors.SelectItemFragment"
+        android:label="Choose Item"
+        tools:layout="@layout/fragment_select_item">
+        <action
+            android:id="@+id/action_selectItemFragment_to_shirtFragment"
+            app:destination="@id/shirtFragment" />
+        <action
+            android:id="@+id/action_selectItemFragment_to_kurtaFragment"
+            app:destination="@id/kurtaFragment" />
+        <action
+            android:id="@+id/action_selectItemFragment_to_pajamaFragment"
+            app:destination="@id/pajamaFragment" />
+        <action
+            android:id="@+id/action_selectItemFragment_to_pantFragment"
+            app:destination="@id/pantFragment" />
+        <action
+            android:id="@+id/action_selectItemFragment_to_salwarFragment"
+            app:destination="@id/salwarFragment" />
+        <argument
+            android:name="deliver_date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/shirtFragment"
+        android:name="com.dhirunand.shamstailors.Items.ShirtFragment"
+        android:label="Measurement"
+        tools:layout="@layout/fragment_shirt">
+        <action
+            android:id="@+id/action_shirtFragment_to_moreItemFragment"
+            app:destination="@id/moreItemFragment" />
+        <argument
+            android:name="delivery_date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/kurtaFragment"
+        android:name="com.dhirunand.shamstailors.Items.KurtaFragment"
+        android:label="Measurement"
+        tools:layout="@layout/fragment_kurta">
+        <action
+            android:id="@+id/action_kurtaFragment_to_moreItemFragment"
+            app:destination="@id/moreItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pajamaFragment"
+        android:name="com.dhirunand.shamstailors.Items.PajamaFragment"
+        android:label="Measurement"
+        tools:layout="@layout/fragment_pajama">
+        <action
+            android:id="@+id/action_pajamaFragment_to_moreItemFragment"
+            app:destination="@id/moreItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishOrderFragment"
+        android:name="com.dhirunand.shamstailors.FinishOrderFragment"
+        android:label="Finish"
+        tools:layout="@layout/fragment_finish_order">
+
+    </fragment>
+    <fragment
+        android:id="@+id/pantFragment"
+        android:name="com.dhirunand.shamstailors.Items.PantFragment"
+        android:label="Measurement"
+        tools:layout="@layout/fragment_pant">
+        <action
+            android:id="@+id/action_pantFragment_to_moreItemFragment"
+            app:destination="@id/moreItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salwarFragment"
+        android:name="com.dhirunand.shamstailors.Items.SalwarFragment"
+        android:label="Measurement"
+        tools:layout="@layout/fragment_salwar">
+        <action
+            android:id="@+id/action_salwarFragment_to_moreItemFragment"
+            app:destination="@id/moreItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreItemFragment"
+        android:name="com.dhirunand.shamstailors.MoreItemFragment"
+        android:label="More Item"
+        tools:layout="@layout/fragment_more_item">
+        <action
+            android:id="@+id/action_moreItemFragment_to_finishOrderFragment"
+            app:destination="@id/finishOrderFragment" />
+        <action
+            android:id="@+id/action_moreItemFragment_to_selectItemFragment"
+            app:destination="@id/selectItemFragment" />
+        <argument
+            android:name="item"
+            app:argType="com.dhirunand.shamstailors.ItemMeasurementContainer" />
+        <argument
+            android:name="delivery_date"
+            app:argType="string" />
+    </fragment>
+</navigation>
